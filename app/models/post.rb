@@ -1,0 +1,16 @@
+class Post < ApplicationRecord
+  # Each post is created by a user
+  belongs_to :user
+
+  # If a post is deleted, all its comments should be deleted too
+  has_many :comments, dependent: :destroy
+
+  # Title and content are mandatory for every post
+  validates :title, presence: true
+  validates :content, presence: true
+
+  # Search posts by keyword in title or content (case-insensitive)
+  def self.search(keyword)
+    where("title ILIKE ? OR content ILIKE ?", "%#{keyword}%", "%#{keyword}%")
+  end
+end
