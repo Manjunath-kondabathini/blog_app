@@ -8,3 +8,201 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.search-container {
+  padding: 1rem;
+}
+
+.search-input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-field {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+}
+
+.post-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  margin-bottom: 0.5rem;
+}
+
+.post-snippet {
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+.post-actions {
+  margin-top: 0.5rem;
+}
+
+.edit-button {
+  background-color: #ffc107;
+  color: #000;
+  padding: 0.25rem 0.5rem;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+}
+
+
+/* === Post Form Styling === */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fefefe;
+}
+
+/* Error box */
+#error_explanation {
+  background-color: #ffe0e0;
+  border: 1px solid #ff4d4d;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+}
+
+#error_explanation h2 {
+  color: #cc0000;
+  font-size: 18px;
+  margin-bottom: 0.5rem;
+}
+
+#error_explanation ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.field input[type="text"],
+.field textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Submit button */
+.actions input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* === Post Display === */
+.post-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.post-container h2 {
+  font-size: 28px;
+  margin-bottom: 0.5rem;
+}
+
+.post-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.post-container small {
+  color: #666;
+  font-size: 0.875rem;
+}
+
+/* === Post Actions (Edit/Delete) === */
+.post-actions {
+  margin-top: 1rem;
+}
+
+.post-actions a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.post-actions a:hover {
+  text-decoration: underline;
+}
+
+/* === Comment Section === */
+.comment {
+  border-top: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.comment strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.comment p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* === Comment Form Prompt === */
+.comment-login-prompt {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.comment-login-prompt a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.comment-login-prompt a:hover {
+  text-decoration: underline;
+}

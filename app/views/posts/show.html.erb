@@ -9,14 +9,6 @@
 
 <hr>
 
-<!--<h3>Comments</h3>
-<% @comments.each do |comment| %>
-  <div style="margin-bottom: 10px;">
-    <strong><%= comment.user.name || comment.user.email %>:</strong>
-    <p><%= comment.body %></p>
-  </div>
-<% end %><!-->
-
 <%= render @comments %>
 
 <% if user_signed_in? %>

@@ -1,4 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :user
-  belongs_to :post
+  # Association One to One connection
+  belongs_to :user        
+  belongs_to :post        
 end

@@ -1,25 +1,25 @@
-<h2>All Posts</h2>
+<h2 class="section-title">All Posts</h2>
 
-<div class="mb-3">
+<div class="search-container">
   <%= form_with url: posts_path, method: :get, local: true do |form| %>
-    <div class="input-group mb-3">
-      <%= form.text_field :search, value: params[:search], placeholder: "Search posts...", class: "form-control" %>
-      <button class="btn btn-primary" type="submit">Search</button>
+    <div class="search-input-group">
+      <%= form.text_field :search, value: params[:search], placeholder: "Search posts...", class: "search-field" %>
+      <button class="search-button" type="submit">Search</button>
     </div>
   <% end %>
 </div>
 
 <% @posts.each do |post| %>
-  <div class="card mb-3">
-    <div class="card-body">
-      <h4><%= link_to post.title, post %></h4>
-      <p><%= truncate(post.content, length: 150) %></p>
-      <small>By <%= post.user.name %> • <%= time_ago_in_words(post.created_at) %> ago</small>
+  <div class="post-card">
+    <div class="post-content">
+      <h4 class="post-title"><%= link_to post.title, post %></h4>
+      <p class="post-snippet"><%= truncate(post.content, length: 150) %></p>
+      <small class="post-meta">By <%= post.user.name %> • <%= time_ago_in_words(post.created_at) %> ago</small>
 
       <% if user_signed_in? && post.user == current_user %>
-        <div class="mt-2">
-          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-warning btn-sm" %>
-          <%= link_to 'Delete', post, data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+        <div class="post-actions">
+          <%= link_to 'Edit', edit_post_path(post), class: "edit-button" %>
+          <%= link_to 'Delete', post, data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "delete-button" %>
         </div>
       <% end %>
     </div>

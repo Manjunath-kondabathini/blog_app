@@ -7,14 +7,13 @@ class PostsController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    #search operation filter posts by keyword
-    if params[:query].present?
-      @posts = Post.search(params[:query])
+    if params[:search].present?
+      @posts = Post.search(params[:search])
     else
-        # sort all the posts in order newest first
       @posts = Post.all.order(created_at: :desc)
     end
   end
+
 
   def show
     @post = Post.find(params[:id])
@@ -35,7 +34,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit; end  # edit is for only authorized handled by before_action
+  def edit; end  # edit is for only authorized handled by before_action 
 
   def update     # update the post  if valid
     if @post.update(post_params)
