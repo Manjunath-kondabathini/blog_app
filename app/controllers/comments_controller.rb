@@ -1,22 +1,18 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!          # logged-in users can create comments.
+  before_action :authenticate_user!
 
   def create
-    @post = Post.find(params[:post_id])    # find the comment using post id
-    @comment = @post.comments.build(comment_params)        
-    @comment.user = current_user
+    post = Post.find(params[:post_id])
+    comment = post.comments.new(comment_params.merge(user: current_user))
 
-    # saving the comment in databse
-    if @comment.save
-      redirect_to @post, notice: "Comment added."
+    if comment.save
+      redirect_to post, notice: 'Comment added.'
     else
-      redirect_to @post, alert: "Comment could not be saved."
+      redirect_to post, alert: 'Comment could not be saved.'
     end
   end
 
   private
-  
-  # Strong parameters: only allow the body field to be submitted
 
   def comment_params
     params.require(:comment).permit(:body)
