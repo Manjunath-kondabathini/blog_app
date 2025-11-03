@@ -8,7 +8,6 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   # Title and content are mandatory for every post
-  # validating correct data is stored or not
   validates :title, presence: true
   validates :content, presence: true
 

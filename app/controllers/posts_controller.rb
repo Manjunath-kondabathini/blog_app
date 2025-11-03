@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # Only the post owner can edit or delete
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
+  
   def index
     if params[:search].present?
       @posts = Post.search(params[:search])
@@ -22,11 +23,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = current_user.posts.build # current user creating new post
+    @post = current_user.posts.new # current user creating new post
   end
 
   def create       # create post
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to @post, notice: "Post created successfully."
     else
